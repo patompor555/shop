@@ -8,7 +8,6 @@ import { AboutComponent } from './about/about.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'Home'},
   { path: 'home-component', component: HomeComponent },
   { path: 'about-component', component: AboutComponent },
   { path: 'shop-component', component: ShopComponent },
