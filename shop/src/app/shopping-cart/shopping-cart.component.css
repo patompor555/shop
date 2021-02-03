@@ -1,0 +1,28 @@
+#container-shopping{
+    padding-top: 99px;
+    border-top: 1px;
+    border-top-color: black;
+    display: flex;
+}
+#div-shopping-pro{
+    display: flex;
+    border: black;
+}
+.col-3{
+    padding-left: 15px;
+    padding-right: 15px; 
+}
+#div-name{
+    display:inline-block;
+    font-size: 40px;
+
+}
+#div-checkbox{
+    display: grid;
+}
+.img-product{
+    width: 100%;
+}
+.col1{
+    margin: auto;
+}
