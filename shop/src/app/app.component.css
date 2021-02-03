@@ -1,0 +1,28 @@
+.container-fluid{
+    display: flex;
+    padding: 15px 0px 15px 0px;
+}
+#header{
+    background-color: #5EAAA8;
+    color: #F2EBEB;
+}
+.topnav {
+    background-color: #FFFFFF;
+    overflow: hidden;
+    padding-left: 120px;
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #5EAAA8;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  .topnav a:hover {
+    color:#F30C2CED;
+  }
+  .topnav a.active {
+    color: #F30C2CED;
+  }

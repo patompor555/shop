@@ -1,0 +1,25 @@
+.container-pic {
+    position: relative;
+    font-family: Arial;
+  }
+  .text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .container-fluid{
+      display: block;
+      padding-top: 75px;
+  }
+
+  #div-product1{
+      display: flex
+      
+  }
+  #div-product2{
+    display: flex
+}
+  /*  ........................page-shop..................................... */
