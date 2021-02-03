@@ -7,6 +7,7 @@
 #div-shopping-pro{
     display: flex;
     border: black;
+    border: 3px solid gray;
 }
 .col-3{
     padding-left: 15px;

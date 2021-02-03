@@ -6,6 +6,23 @@
     background-color: #5EAAA8;
     color: #F2EBEB;
 }
+.head{
+  padding-top: 20px;
+}
+#shopping-cart{
+ width: 100%;
+}
+.shopping{
+  width: 53px;
+  height: 53px;
+}
+.col23{
+  padding-left: 60px;
+}
+#img-logo{
+  width: 103px;
+  height: 93px;
+}
 .topnav {
     background-color: #FFFFFF;
     overflow: hidden;
