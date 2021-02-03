@@ -7,7 +7,7 @@
 #div-shopping-pro{
     display: flex;
     border: black;
-    border: 3px solid gray;
+    border: 3px solid#707070;
 }
 .col-3{
     padding-left: 15px;
@@ -26,4 +26,9 @@
 }
 .col1{
     margin: auto;
+}
+.col-sum{
+    border: black;
+    border: 3px solid#707070;
+    padding-top: 38px;
 }
