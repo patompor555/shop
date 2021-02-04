@@ -10,15 +10,13 @@
     </header>
     <section>
         <div class="Product-list" id="div-shopping-pro">
-                <!--form cass = "Shopping-list" id="div-shopping-pro"-->
-                    <div id="img">
-                        <img src="https://cdn.discordapp.com/attachments/748375075706634243/806443249240637470/shop1.png"
+            <div id="img">
+                <img src="https://cdn.discordapp.com/attachments/748375075706634243/806443249240637470/shop1.png"
                             alt="product" class="img-product">
-                    </div>
-                    <div  class="product-details">
-                        <a>องเท้าหนาพิเศษองเท้าหนาพิเศษ</a>
-                        <a>องเท้าหนาพิเศษองเท้าหนาพิเศษ</a>
-                    </div>
+            </div>
+                <div  class="product-details">
+                    <a>รองเท้าหนาพิเศษองเท้าหนาพิเศษ ขนาด39</a>
+                </div>
                     <div class="col-2 col1" id="div-name">
                         <div>
                             <span>฿</span>
@@ -28,17 +26,17 @@
                                 <div class="">
                                     <div class="net-vid-pieces-input">
                                         <div class="next-icon-bar">
-                                            <button unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-up " type="button" >
-                                                    <i class="fa fa-plus">-</i>
+                                            <button type="button" (click)="onclick_plus(box.value)">
+                                                    <i class="fa fa-plus"></i>
                                             </button>
                                         </div>
                                         <div class="">
                                             <span class="net-vid-pieces-input-boxtext">
-                                                <input type="text" step="1" min="2" max="99" [value]="pieces" >
+                                                <input #box (keyup)="onKey(box.value)" [value]="pieces">
                                             </span>
                                         </div>
                                         <div class="next-icon-bar">
-                                            <button unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-up ">
+                                            <button type="button" (click)="onclick_minus(box.value)">
                                                     <i class="fa fa-minus"></i>
                                             </button>
                                         </div>
@@ -49,14 +47,12 @@
                     </div>
                     <div class="col-2 col1" id="div-checkbox">
                         <div>
-                            <input type="checkbox" name="checkbox" id="shop-check">
+                            <input (change)="box_check($event, check)" [value]="check" type="checkbox"/>
                         </div>
                         <div>
                             <a href="#" onclick="คุณต้องการลบรายการสินค้าของคุณหรือไม่">ลบ</a>
                         </div>
-                        
                     </div>
-                <!--/form-->
             </div>
             <p></p>
             <div class="Product-list" id="div-shopping-pro">
@@ -74,8 +70,8 @@
                         <div><span>จำนวน</span></div>
                     </div>
                     <div class="col-2 col1" id="div-checkbox">
-                        <input type="checkbox"  [checked]="value_check">
-                        <a>ลบ</a>
+                        <input (change)="box_check($event, check)" [value]="check" type="checkbox"/>
+                        <a>{{check}}</a>
                     </div>
                 <!--/form-->
             </div>
@@ -83,29 +79,31 @@
     </section>
     <aside>
         <div class="div-shopping-sum">
-            
             <div>
-                <!--form class="col-lg-3" id=""-->
-                
                 <div class="div-shoping-sum-from-head">
                     <p>สรุปรายการสั่งซื้อ<p>
                 </div>
                 <div class="div-shoping-sum-from">
                     <div class="div-shoping-sum-from-detail">
                         <span>ยอดรวม (จำนวน)</span>
-                        <div>
-                            <span>฿</span><span>{{total_price}}</span>
+                        <div >
+                            <span class="div-shoping-sum-from-detail-ro1">฿ {{total_price}}</span>
                         </div>
                     </div>
                         
-                    <div><span>ค่าจัดส่ง</span><span>฿</span><span>0.00</span></div>
-                    <div><span>ยอดรวมทั้งสิ้น</span><span>฿</span><span>0.00</span></div>
+                    <div><span>ค่าจัดส่ง</span>
+                        <span class="div-shoping-sum-from-detail-ro2">฿ {{shipping_cost}}</span>
+                    </div>
+                    <div><span>ยอดรวมทั้งสิ้น</span>
+                        <span class="div-shoping-sum-from-detail-ro3">฿ {{all_total_price}}</span>
+                    </div>
                 </div>
-            <!--/form-->
+                <div>
+                    <div type="button" class="box-buy-products">
+                        <button>ชำระสินค้า</button>
+                    </div>
+                </div>
             </div>
-            
         </div>
     </aside>
-<!--/div-->
-    
 </body>

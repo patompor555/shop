@@ -62,9 +62,16 @@ aside{
     display: inline-flex;
 }
 
-.div-shoping-sum-from-detail-ro{
-    text-align: right;
-    
+.div-shoping-sum-from-detail-ro1{
+    padding-left: 100px;
+}
+
+.div-shoping-sum-from-detail-ro2{
+    padding-left: 157px;
+}
+
+.div-shoping-sum-from-detail-ro3{
+    padding-left: 120px;
 }
 
 
@@ -162,6 +169,22 @@ aside{
     text-align: center;
 }
 
+.box-buy-products{
+    padding-top: 20px;
+    padding-left: 20px;
+    border: black;
+    text-align: center;
+}
+
+.box-buy-products > button{
+    width: 300px;
+    height: 50px;
+    background-color:rgb(255, 223, 44);
+}
+
+.c1{
+    text-align: left;
+}
 
 
 
