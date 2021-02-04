@@ -37,6 +37,37 @@ aside{
     height: 150px;
 }
 
+.div-shopping-sum{
+    display: flex;
+    border: black;
+    border: 1.2px solid#8f8e8e;
+    height: 250px;
+}
+
+.div-shoping-sum-from-head{
+    padding-top: 5px;
+    padding-left: 5px;
+    text-align: left;
+    font-size: 30px;
+    height: 35px;
+    
+}
+
+.div-shoping-sum-from > div{
+    padding-left: 25px;
+    padding-top: 20px;
+}
+
+.div-shoping-sum-from-detail{
+    display: inline-flex;
+}
+
+.div-shoping-sum-from-detail-ro{
+    text-align: right;
+    
+}
+
+
 .product-details{
     padding-left: 10px;
     padding-top: 50px;
