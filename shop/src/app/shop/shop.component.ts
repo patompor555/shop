@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
-import { Products } from '../Products';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Product } from '../Product';
+import { PRODUCTS } from '../mock-Products';
 import { Cart } from '../Cart';
 
 @Component({
@@ -9,20 +10,12 @@ import { Cart } from '../Cart';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  products = Products;
+  products = PRODUCTS;
   productsForm: FormGroup;
   cart = Cart;
-  Modal = [
-    {
-      image_M: "",
-      productName_M: "",
-      size_M: "",
-      price_M: "",
-      storeName_M: "",
-  }
-  ];
+  selectedProduct!: Product ;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, ) {
     this.productsForm = this.fb.group({
       image: [''],
       productName: [''],
@@ -35,16 +28,23 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit() {
     // this.productsForm.controls['Queue'].setValue(this.queue);
     this.cart.push(this.productsForm.value);
     console.log(this.productsForm.value)
   }
 
-  onModal(){
-    this.Modal.push(this.productsForm.value);
-    console.log(this.productsForm.value)
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
+    console.log("passssssss", this.selectedProduct)
   }
+
+  // onModal(){
+  //   this.Modal.push(this.productsForm.value);
+  //   console.log(this.productsForm.value)
+  // }
+
+
 
 
 

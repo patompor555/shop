@@ -20,19 +20,21 @@
                         <a>องเท้าหนาพิเศษองเท้าหนาพิเศษ</a>
                     </div>
                     <div class="col-2 col1" id="div-name">
-                        <div><span>฿</span><span>229.00</span></div>
+                        <div>
+                            <span>฿</span>
+                            <span>{{price}}</span></div>
                             <div>
                                 <span>จำนวน</span>
                                 <div class="">
                                     <div class="net-vid-pieces-input">
                                         <div class="next-icon-bar">
-                                            <button unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-up ">
-                                                    <i class="fa fa-plus"></i>
+                                            <button unselectable="unselectable" class="next-number-picker-handler next-number-picker-handler-up " type="button" >
+                                                    <i class="fa fa-plus">-</i>
                                             </button>
                                         </div>
                                         <div class="">
                                             <span class="net-vid-pieces-input-boxtext">
-                                                <input>
+                                                <input type="text" step="1" min="2" max="99" [value]="pieces" >
                                             </span>
                                         </div>
                                         <div class="next-icon-bar">
@@ -42,13 +44,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                            
+
                             </div>
                     </div>
                     <div class="col-2 col1" id="div-checkbox">
-                        <input type="checkbox" name="checkbox" id="shop-check">
-                        <a>ลบ</a>
+                        <div>
+                            <input type="checkbox" name="checkbox" id="shop-check">
+                        </div>
+                        <div>
+                            <a href="#" onclick="คุณต้องการลบรายการสินค้าของคุณหรือไม่">ลบ</a>
+                        </div>
+                        
                     </div>
                 <!--/form-->
             </div>
@@ -68,7 +74,7 @@
                         <div><span>จำนวน</span></div>
                     </div>
                     <div class="col-2 col1" id="div-checkbox">
-                        <input type="checkbox" name="checkbox" id="shop-check">
+                        <input type="checkbox"  [checked]="value_check">
                         <a>ลบ</a>
                     </div>
                 <!--/form-->
@@ -76,15 +82,28 @@
 
     </section>
     <aside>
-        <div id="div-shopping-pro">
-            <!--form class="col-lg-3" id=""-->
-                <div>
-                    <h3>สรุปรายการสั่งซื้อ</h3>
+        <div class="div-shopping-sum">
+            
+            <div>
+                <!--form class="col-lg-3" id=""-->
+                
+                <div class="div-shoping-sum-from-head">
+                    <p>สรุปรายการสั่งซื้อ<p>
                 </div>
-                <div><span>ยอดรวม (จำนวน)</span><span>฿</span><span>0.00</span></div>
-                <div><span>ค่าจัดส่ง</span><span>฿</span><span>0.00</span></div>
-                <div><span>ยอดรวมทั้งสิ้น</span><span>฿</span><span>0.00</span></div>
+                <div class="div-shoping-sum-from">
+                    <div class="div-shoping-sum-from-detail">
+                        <span>ยอดรวม (จำนวน)</span>
+                        <div>
+                            <span>฿</span><span>{{total_price}}</span>
+                        </div>
+                    </div>
+                        
+                    <div><span>ค่าจัดส่ง</span><span>฿</span><span>0.00</span></div>
+                    <div><span>ยอดรวมทั้งสิ้น</span><span>฿</span><span>0.00</span></div>
+                </div>
             <!--/form-->
+            </div>
+            
         </div>
     </aside>
 <!--/div-->

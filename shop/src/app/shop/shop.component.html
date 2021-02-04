@@ -6,46 +6,17 @@
     </div>
 </div>
 
-<!-- <div class="container-fluid">
-
-    <div class="col-lg-6 product" id="div-product">
-        <div *ngFor="let product of products">
-            <div class="col-lg-6">
-                <img src="{{product.image}}" class="image">
-            </div>
-            <div class="col-lg-6 name-pro">
-                <div class="col12">
-                    <span>{{product.productName}}</span>
-                </div>
-                <div class="col12">
-                    <span>ขนาด </span>
-                    <span>{{product.size}}</span>
-                    <span> ซม.</span>
-                </div>
-                <div class="col12">
-                    <span>ราคา </span>
-                    <span>{{product.price}}</span>
-                    <span> บาท</span>
-                </div>
-                <div class="col12">
-                    <span>ชื่อร้าน </span>
-                    <span>{{product.storeName}}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6">
-            Level 1: .col-sm-6
-            <div *ngFor="let product of products">
+            รายการสินค้า
+            <div *ngFor="let product of products" [class.selected]="product === selectedProduct"
+                (click)="onSelect(product)">
                 <div class="row" data-toggle="modal" data-target="#addToCart">
                     <div class="col-8 col-sm-6">
                         <img src="{{product.image}}" class="image">
                     </div>
-                    <div class="col-4 col-sm-6" >
+                    <div class="col-4 col-sm-6">
 
                         <span>{{product.productName}}</span><br>
                         <span>ขนาด {{product.size}} ซม.</span><br>
@@ -65,17 +36,49 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button><br>
-                ...
+                </button><br><br> -->
+                <div *ngIf="selectedProduct">
+
+                    <!-- <h2>{{selectedProduct.productName | uppercase}} Details</h2>
+                    <div><span>name: </span>{{selectedProduct.productName}}</div>
+                    <div>
+                        <label>price:
+                            <input [(ngModel)]="selectedProduct.price" placeholder="price" />
+                        </label>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-8">
+                            <img src="{{selectedProduct.image}}" class="image">
+                        </div>
+                        <div class="col-4">
+                            <span>{{selectedProduct.productName}}</span><br>
+                            <span>ขนาด {{selectedProduct.size}} ซม.</span><br>     
+                            <span>ชื่อร้าน {{selectedProduct.storeName}}</span><br><br>
+                            <h2 id="priceModal">฿ {{selectedProduct.price}} </h2><br>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-warning" routerLink="/shoppingCart-component" data-backdrop="false">ซื้อเลย</button>
+                <button type="button" class="btn btn-primary" routerLink="/shoppingCart-component" data-backdrop="false">เพิ่มลงตะกร้า</button>
             </div>
         </div>
     </div>
 </div>
 <!-- End Modal -->
+
+<!-- <div *ngIf="selectedProduct">
+
+    <h2>{{selectedProduct.productName | uppercase}} Details</h2>
+    <div><span>name: </span>{{selectedProduct.productName}}</div>
+    <div>
+        <label>price:
+            <input [(ngModel)]="selectedProduct.price" placeholder="price" />
+        </label>
+    </div>
+
+</div> -->
