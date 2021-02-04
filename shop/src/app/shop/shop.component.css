@@ -26,4 +26,13 @@
   width: 300px;
 
 }
+
+.btn-primary{
+  background-color: #F2610D;
+  border-color: #F2610D;
+}
+#priceModal{
+  color: #F05A10;
+}
+
   /*  ........................page-shop..................................... */
