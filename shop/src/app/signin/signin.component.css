@@ -1,0 +1,22 @@
+.signin{
+    margin: auto;
+}
+.input .E .P{
+    display: -webkit-box;
+}
+.inputbar{
+    width: 100%;
+}
+#div-in{
+    display: flex;
+}
+#div-btn-sign{
+    display: flex;
+    margin: auto;
+}
+#btn-sign{
+    background-color:#5EAAA8;
+    color:  #F2EBEB;
+    border-color: 1px solid #888;
+    border-radius: 29px;
+}

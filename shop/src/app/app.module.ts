@@ -10,6 +10,7 @@ import { ShopComponent } from './shop/shop.component';
 import { SellProductsComponent } from './sell-products/sell-products.component';
 import { AboutComponent } from './about/about.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     SellProductsComponent,
     AboutComponent,
     ShoppingCartComponent,
+    SigninComponent,
    
   ],
   imports: [
