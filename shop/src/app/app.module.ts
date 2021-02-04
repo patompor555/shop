@@ -16,7 +16,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ShopComponent,
     SellProductsComponent,
     AboutComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+   
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,15 @@
 .container-fluid{
     display: flex;
-    padding: 15px 0px 15px 0px;
+    padding: 10px 0px;
 }
 #header{
     background-color: #5EAAA8;
     color: #F2EBEB;
 }
 .head{
-  padding-top: 20px;
+  position: absolute;
+  padding-top: 14px;
+  left: 95px;
 }
 #shopping-cart{
  width: 100%;
@@ -20,8 +22,8 @@
   padding-left: 60px;
 }
 #img-logo{
-  width: 103px;
-  height: 93px;
+  width: 85px;
+  height: 80px;
 }
 .topnav {
     background-color: #FFFFFF;
@@ -43,3 +45,70 @@
   .topnav a.active {
     color: #F30C2CED;
   }
+  #myTopnav{
+    display: block;
+  }
+  .myiconnav{
+    display: flex;
+  }
+  .icon{
+    width: 22px;
+    height: 22Px;
+  }
+  .ps{
+    padding: 14px 0px;
+    text-align: center;
+  }
+
+ .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: #5EAAA8;
+  color: #F2EBEB;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 30%;
+  height: auto;
+  margin: 30px auto;
+} 
+.modalsize{
+  display: flex;
+  padding: 30px 50px;
+}
+.headM{
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  width: 100%;
+  font-size: 45px;
+}
+.inputN{
+  display: grid;
+  font-size: 30px;
+}
+.sum{
+  border: 1px solid #888;
+  text-align: center;
+  width: 30%;
+  margin: 20px auto;
+}
+.si{
+  text-align: right;
+  float: right;
+  color: #F2EBEB;
+}
+.pad{
+  margin-top: 20px
+}
+
