@@ -1,87 +1,81 @@
 <div class="container container-pic">
-    <img src="C:\Users\ma10\OneDrive\เดสก์ท็อป\Angular\shop\shop\shop.jpg" alt="Norway" style="width:100%;">
+    <img src="https://media.discordapp.net/attachments/748375075706634243/806443248540844032/shop.jpg" alt="Norway"
+        style="width:100%;">
     <div class="text-block">
         <h3>เครื่องจักรสานจากมือ</h3>
     </div>
 </div>
+
+<!-- <div class="container-fluid">
+
+    <div class="col-lg-6 product" id="div-product">
+        <div *ngFor="let product of products">
+            <div class="col-lg-6">
+                <img src="{{product.image}}" class="image">
+            </div>
+            <div class="col-lg-6 name-pro">
+                <div class="col12">
+                    <span>{{product.productName}}</span>
+                </div>
+                <div class="col12">
+                    <span>ขนาด </span>
+                    <span>{{product.size}}</span>
+                    <span> ซม.</span>
+                </div>
+                <div class="col12">
+                    <span>ราคา </span>
+                    <span>{{product.price}}</span>
+                    <span> บาท</span>
+                </div>
+                <div class="col12">
+                    <span>ชื่อร้าน </span>
+                    <span>{{product.storeName}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
 <div class="container-fluid">
-    <div class="col-lg-6 product" id="div-product1">
-        <div class="col-lg-6">
-            <img src="C:\Users\ma10\OneDrive\เดสก์ท็อป\Angular\shop\shop\shop1.png" alt="product" style="width:100%;">
-        </div>
-        <div class="col-lg-6 name-pro">
-            <div class="col12">
-                <span>หีบสานจากไม้ไผ่</span>
-            </div>
-            <div class="col12">
-                <span>ขนาด</span>
-                <span>10 x 20</span>
-                <span>ซม.</span>
-            </div>
-            <div class="col12">
-                <span>ราคา</span>
-                <span>119</span>
-                <span>บาท</span>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <img src="C:\Users\ma10\OneDrive\เดสก์ท็อป\Angular\shop\shop\shop1.png" alt="product" style="width:100%;">
-        </div>
-        <div class="col-lg-6 name-pro">
-            <div class="col12" id="div-1">
-                <span>หีบสานจากไม้ไผ่</span>
-            </div>
-            <div class="col12">
-                <span>ขนาด</span>
-                <span>10 x 20</span>
-                <span>ซม.</span>
-            </div>
-            <div class="col12">
-                <span>ราคา</span>
-                <span>119</span>
-                <span>บาท</span>
+    <div class="row">
+        <div class="col-sm-6">
+            Level 1: .col-sm-6
+            <div *ngFor="let product of products">
+                <div class="row" data-toggle="modal" data-target="#addToCart">
+                    <div class="col-8 col-sm-6">
+                        <img src="{{product.image}}" class="image">
+                    </div>
+                    <div class="col-4 col-sm-6" >
+
+                        <span>{{product.productName}}</span><br>
+                        <span>ขนาด {{product.size}} ซม.</span><br>
+                        <span>ราคา {{product.price}} บาท</span><br>
+                        <span>ชื่อร้าน {{product.storeName}}</span>
+                    </div>
+                </div><br>
+
             </div>
         </div>
-        
     </div>
-    <div class="col-lg-6 pic-product" id="div-product2">
-        <div class="col-lg-6">
-            <img src="C:\Users\ma10\OneDrive\เดสก์ท็อป\Angular\shop\shop\shop1.png" alt="product" style="width:100%;">
-        </div>
-        <div class="col-lg-6 name-pro">
-            <div class="col12">
-                <span>หีบสานจากไม้ไผ่</span>
-            </div>
-            <div class="col12">
-                <span>ขนาด</span>
-                <span>10 x 20</span>
-                <span>ซม.</span>
-            </div>
-            <div class="col12">
-                <span>ราคา</span>
-                <span>119</span>
-                <span>บาท</span>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <img src="C:\Users\ma10\OneDrive\เดสก์ท็อป\Angular\shop\shop\shop1.png" alt="product" style="width:100%;">
-        </div>
-        <div class="col-lg-6 name-pro">
-            <div class="col12">
-                <span>หีบสานจากไม้ไผ่</span>
-            </div>
-            <div class="col12">
-                <span>ขนาด</span>
-                <span>10 x 20</span>
-                <span>ซม.</span>
-            </div>
-            <div class="col12">
-                <span>ราคา</span>
-                <span>119</span>
-                <span>บาท</span>
-            </div>
-        </div>
-        
-    </div>
-   
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="addToCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button><br>
+                ...
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
