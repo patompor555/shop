@@ -1,0 +1,29 @@
+.sell{
+    display: flex;
+}
+.img-sell{
+    width: 90%;
+    height: 382px;
+    border: 1px solid #707070;
+}
+#edit{
+    background-color: #F19E10;
+    color: #F2F2F2;
+    border: 1px solid #707070;
+    padding: 6px 25px;
+}
+#confrim{
+    background-color: #2285D3;
+    color: #F2F2F2;
+    border: 1px solid #707070;
+    padding: 6px 25px;
+    margin-left: 5px;
+}
+.col-input{
+    display: flex;
+    padding: 25px 0px 0px 0px;
+}
+.btn-con{
+    padding-top: 103px;
+    float: right;
+}
