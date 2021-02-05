@@ -24,15 +24,69 @@
 
 .image{
   width: 300px;
-
 }
 
+
+
+
+.description{
+  top: 30px;
+  font-size: 50px;
+}
+
+/* .modal-backdrop {
+  background-color: transparent;
+} */
+
+.btn1{
+  left: 30px;
+}
+.btn2{
+  left: 60.5px;
+}
+.btn-warning{
+  font-size: 30px;
+  width: 397px;
+}
 .btn-primary{
   background-color: #F2610D;
   border-color: #F2610D;
+  font-size: 30px;
+  width: 397px;
 }
 #priceModal{
   color: #F05A10;
+  font-size: 60px;
+}
+.image2{
+  width: 795px;
+  height: 525px;
+}
+
+.modalImage{
+  top: 30px;
+  left: 30px;
+}
+
+.modal-header{
+  border-bottom: 0;
+}
+
+.modal-content{
+  top: 10%;
+  left: 265px;
+  width: 1445px;
+  height: 772px;
+  position: sticky;
+  border: 3px solid rgba(250, 92, 0, 0.986); ;
+}
+
+.close{
+  font-size: 2.5rem;
+}
+
+.addAmount{
+  width: 50px;
 }
 
   /*  ........................page-shop..................................... */

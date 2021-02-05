@@ -31,45 +31,48 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="addToCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button><br><br> -->
-                <div *ngIf="selectedProduct">
+<div id="addToCart" class="modal" data-backdrop="false">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button><br>
+        </div>
+        <div class="modalBody">
 
-                    <!-- <h2>{{selectedProduct.productName | uppercase}} Details</h2>
-                    <div><span>name: </span>{{selectedProduct.productName}}</div>
-                    <div>
-                        <label>price:
-                            <input [(ngModel)]="selectedProduct.price" placeholder="price" />
-                        </label>
-                    </div> -->
-                    <div class="row">
-                        <div class="col-8">
-                            <img src="{{selectedProduct.image}}" class="image">
-                        </div>
-                        <div class="col-4">
-                            <span>{{selectedProduct.productName}}</span><br>
-                            <span>ขนาด {{selectedProduct.size}} ซม.</span><br>     
-                            <span>ชื่อร้าน {{selectedProduct.storeName}}</span><br><br>
-                            <h2 id="priceModal">฿ {{selectedProduct.price}} </h2><br>
-                        </div>
+            <div *ngIf="selectedProduct">
+                <div class="row">
+                    <div class="col-7 modalImage">
+                        <img src="{{selectedProduct.image}}" class="image2">
+                    </div>
+                    <div class="col-5 description">
+                        <span>{{selectedProduct.productName}}</span><br>
+                        <span>ขนาด {{selectedProduct.size}} ซม.</span><br>
+                        <span>ชื่อร้าน {{selectedProduct.storeName}}</span><br><br><br>
+                        <h2 id="priceModal">&nbsp;&nbsp;฿ {{selectedProduct.price}} </h2>
+                        &nbsp;&nbsp;<button (click)="decreaseAmount()">-</button><input class="addAmount" placeholder="{{amount}}"><button (click)="addAmount()">+</button>
                     </div>
                 </div>
-
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-warning" routerLink="/shoppingCart-component" data-backdrop="false">ซื้อเลย</button>
-                <button type="button" class="btn btn-primary" routerLink="/shoppingCart-component" data-backdrop="false">เพิ่มลงตะกร้า</button>
+        </div>
+        <div class="modalFooter">
+            <br><br><br>
+            <div class="row">
+                <div class="col-3 btn1">
+                    <button type="button" class="btn btn-warning" routerLink="/shoppingCart-component"
+                        data-backdrop="false">ซื้อเลย</button>
+                </div>
+                <div class="col-4 btn2">
+                    <button type="button" class="btn btn-primary" routerLink="/shoppingCart-component"
+                        data-backdrop="false">เพิ่มลงตะกร้า</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- End Modal -->
+
+
 
 <!-- <div *ngIf="selectedProduct">
 

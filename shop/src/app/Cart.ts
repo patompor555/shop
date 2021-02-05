@@ -5,5 +5,6 @@ export const Cart = [
         size: "",
         price: "",
         storeName: "",
+        amount:""
     }
 ];

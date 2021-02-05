@@ -12,10 +12,11 @@ import { Cart } from '../Cart';
 export class ShopComponent implements OnInit {
   products = PRODUCTS;
   productsForm: FormGroup;
-  cart = Cart;
-  selectedProduct!: Product ;
+  // cart: Cart;
+  selectedProduct!: Product;
+  amount = 1;
 
-  constructor(private fb: FormBuilder, ) {
+  constructor(private fb: FormBuilder,) {
     this.productsForm = this.fb.group({
       image: [''],
       productName: [''],
@@ -28,16 +29,38 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    // this.productsForm.controls['Queue'].setValue(this.queue);
-    this.cart.push(this.productsForm.value);
-    console.log(this.productsForm.value)
-  }
-
   onSelect(product: Product): void {
     this.selectedProduct = product;
-    console.log("passssssss", this.selectedProduct)
+    console.log("passssssss", this.selectedProduct);
   }
+
+  addAmount(){
+    this.amount+=1;
+  }
+
+  decreaseAmount(){
+    this.amount-=1;
+    if(this.amount == 0){
+      this.amount = 1;
+    }
+  }
+
+  onSubmit(product: Product) {
+    // this.productsForm.controls['Queue'].setValue(this.queue);
+    // this.cart.push(this.productsForm.value);
+    // console.log(this.productsForm.value)
+    // this.cart.
+    // if( this.cart.amount == 0){
+    //   this.cart.amount=1
+    // }else{
+    //   this.cart.amount+=1
+    // }
+    // console.log(this.cart)
+    
+
+  }
+
+  
 
   // onModal(){
   //   this.Modal.push(this.productsForm.value);
