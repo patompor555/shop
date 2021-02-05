@@ -1,16 +1,79 @@
 .container-pic {
-    position: relative;
-    font-family: Arial;
+  padding-top: 1px;
+  padding-left: 130px;
+  padding-right: 60px;
+  /* position: relative; */
+  font-family: Arial;
   }
+
+.container-img-from{
+  /* background-color: black; */
+  border: 1px;
+  border-style: solid;
+  border-color: rgb(86, 94, 93);
+}
+
+.container-flex-pan{
+  padding: 10px;
+  position:relative;
+  height: 400px;
+}
+
+.container-flex-pan-img > img{
+  text-align: center;
+  height: 400px;
+  width: 1285px;
+}
   
-.text-block {
+.text-block > h3{
     position: absolute;
     bottom: 20px;
     right: 20px;
-    color: white;
+    color: rgb(255, 255, 255);
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 40px;
 } 
+
+.hrad-from{
+  padding-top: 20px;
+}
+
+.text-hrad{
+  background-color: rgb(201, 168, 223);
+  height: 35px;
+}
+.text-hrad > p{
+  font-size: 18px;
+  padding-top: 5px;
+  padding-left: 20px;
+  color: rgb(58, 14, 99);
+}
+
+
+.container-list-pro{
+  display: grid;
+  grid: 150px / auto auto;
+}
+
+.test{
+  display: flex;
+  padding: 10px;
+}
+
+.test2{
+
+}
+
+.img-pro > img{
+  width: 200px;
+  height: 120px;
+}
+
+
+
+
+
 
 .container-fluid{
       display: block;
