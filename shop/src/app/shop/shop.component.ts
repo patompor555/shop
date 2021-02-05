@@ -12,7 +12,7 @@ import { Cart } from '../Cart';
 export class ShopComponent implements OnInit {
   products = PRODUCTS;
   productsForm: FormGroup;
-  // cart: Cart;
+  cart = Cart;
   selectedProduct!: Product;
   amount = 1;
 
@@ -34,18 +34,27 @@ export class ShopComponent implements OnInit {
     console.log("passssssss", this.selectedProduct);
   }
 
-  addAmount(){
-    this.amount+=1;
+  addAmount() {
+    this.amount += 1;
   }
 
-  decreaseAmount(){
-    this.amount-=1;
-    if(this.amount == 0){
+  decreaseAmount() {
+    this.amount -= 1;
+    if (this.amount == 0) {
       this.amount = 1;
     }
   }
 
-  onSubmit(product: Product) {
+  onSubmit() {
+    this.cart.push({
+      image: this.selectedProduct.image,
+      productName: this.selectedProduct.productName,
+      size: this.selectedProduct.size,
+      price: this.selectedProduct.price,
+      storeName: this.selectedProduct.storeName,
+      amount: this.amount
+    });
+    console.log(this.cart);
     // this.productsForm.controls['Queue'].setValue(this.queue);
     // this.cart.push(this.productsForm.value);
     // console.log(this.productsForm.value)
@@ -56,11 +65,11 @@ export class ShopComponent implements OnInit {
     //   this.cart.amount+=1
     // }
     // console.log(this.cart)
-    
+
 
   }
 
-  
+
 
   // onModal(){
   //   this.Modal.push(this.productsForm.value);

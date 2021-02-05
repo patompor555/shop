@@ -3,8 +3,8 @@ export const Cart = [
         image: "",
         productName: "",
         size: "",
-        price: "",
+        price: 0,
         storeName: "",
-        amount:""
+        amount:0
     }
 ];
