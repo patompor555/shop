@@ -28,7 +28,7 @@
 .topnav {
     background-color: #FFFFFF;
     overflow: hidden;
-    padding-left: 120px;
+    padding-left: 100px;
   }
   .topnav a {
     float: left;
@@ -37,7 +37,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
   }
   .topnav a:hover {
     color:#F30C2CED;
