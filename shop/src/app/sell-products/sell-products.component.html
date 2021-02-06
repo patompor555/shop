@@ -1,34 +1,72 @@
-
 <div class="container sell">
     <div class="col-6">
         <div class="img-sell"></div>
+        <input type="text" formControlName="image" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.image.errors }" />
+        <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+            <div *ngIf="f.image.errors.required">Store name is required</div>
+        </div>
     </div>
     <div class="col-6">
         <div>
-            <div class="col-12 col-input">
-                <div class="col-4 text-input"><span>ชื่อร้านสินค้า : </span></div>
-                <input type="text"> 
-            </div>
-            <div class="col-12 col-input">
-                <div class="col-4 text-input"><span>ชื่อสินค้า : </span></div>
-                <input type="text">
-            </div>
-            <div class="col-12 col-input">
-                <div class="col-4 text-input"><span>ประเภท : </span></div>
-                <input type="text">
-            </div>
-            <div class="col-12 col-input">
-                <div class="col-4 text-input"><span>จำนวน : </span></div>
-                <input type="text">
-            </div>
-            <div class="col-12 col-input">
-                <div class="col-4 input-task"><span>รายละเอียดสินค้า : </span></div>
-                <input type="text">
-            </div>
-            <div class="col-12 btn-con">
-                <button id="edit">แก้ไข</button>
-                <button id="confrim">ยืนยัน</button>
-            </div>
+            <form [formGroup]="addProductsForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <div class="col-12 col-input">
+                        <div class="col-4 text-input"><span>ชื่อร้านค้า : </span></div>
+                        <input type="text" formControlName="storeName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.storeName.errors }" />
+                        <div *ngIf="submitted && f.storeName.errors" class="invalid-feedback">
+                            <div *ngIf="f.storeName.errors.required">Store name is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12 col-input">
+                        <div class="col-4 text-input"><span>ชื่อสินค้า : </span></div>
+                        <input type="text" formControlName="productName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.productName.errors }" />
+                        <div *ngIf="submitted && f.productName.errors" class="invalid-feedback">
+                            <div *ngIf="f.productName.errors.required">Product name is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12 col-input">
+                        <div class="col-4 text-input"><span>ราคา : </span></div>
+                        <input type="text" formControlName="price" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+                        <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                            <div *ngIf="f.price.errors.required">Product Type is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12 col-input">
+                        <div class="col-4 text-input"><span>จำนวน : </span></div>
+                        <input type="text" formControlName="amount" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" />
+                        <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                            <div *ngIf="f.amount.errors.required">Amount is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12 col-input">
+                        <div class="col-4 input-task"><span>รายละเอียดสินค้า : </span></div>
+                        <input type="text" formControlName="Details" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.Details.errors }" />
+                        <div *ngIf="submitted && f.Details.errors" class="invalid-feedback">
+                            <div *ngIf="f.Details.errors.required">Product Details is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12 btn-con">
+                        <button id="edit">ล้าง</button>
+                        <button id="confrim">ยืนยัน</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

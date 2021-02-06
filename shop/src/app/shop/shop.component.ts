@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Product } from '../Product';
-import { PRODUCTS } from '../mock-Products';
 import { Cart } from '../Cart';
+import { PRODUCTS } from '../mock-Products';
 
 @Component({
   selector: 'app-shop',
@@ -10,9 +10,9 @@ import { Cart } from '../Cart';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  products = PRODUCTS;
   productsForm: FormGroup;
   cart = Cart;
+  products = PRODUCTS;
   selectedProduct!: Product;
   amount = 1;
 
@@ -49,10 +49,10 @@ export class ShopComponent implements OnInit {
     this.cart.push({
       image: this.selectedProduct.image,
       productName: this.selectedProduct.productName,
-      size: this.selectedProduct.size,
       price: this.selectedProduct.price,
       storeName: this.selectedProduct.storeName,
-      amount: this.amount
+      amount: this.amount,
+      Details: this.selectedProduct.Details,
     });
     console.log(this.cart);
     // this.productsForm.controls['Queue'].setValue(this.queue);
@@ -65,19 +65,6 @@ export class ShopComponent implements OnInit {
     //   this.cart.amount+=1
     // }
     // console.log(this.cart)
-
-
   }
-
-
-
-  // onModal(){
-  //   this.Modal.push(this.productsForm.value);
-  //   console.log(this.productsForm.value)
-  // }
-
-
-
-
 
 }
