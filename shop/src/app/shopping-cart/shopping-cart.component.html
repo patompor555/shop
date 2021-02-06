@@ -3,78 +3,69 @@
 </head>
 <body>
 <!--div id="shopping"-->
-    
     <header>
         <hr class="line-hr">
         ตะกร้าสินค้า
     </header>
     <section>
-        <div class="Product-list" id="div-shopping-pro">
-            <div id="img">
-                <img src="https://cdn.discordapp.com/attachments/748375075706634243/806443249240637470/shop1.png"
-                            alt="product" class="img-product">
-            </div>
-                <div  class="product-details">
-                    <a>รองเท้าหนาพิเศษองเท้าหนาพิเศษ ขนาด39</a>
-                </div>
+        <div *ngFor ="let product of product">
+            <!--<div data-toggle="modal" data-target="#addToCart">-->
+                <div class="Product-list" id="div-shopping-pro">
+                    <div id="img">
+                        <img src="{{product.image}}"
+                                    alt="product" class="img-product">
+                    </div>
+                    <div  class="product-details">
+                        <a>{{product.productName}}</a>
+                        <a>{{product.storeName}}</a>
+                    </div>
                     <div class="col-2 col1" id="div-name">
                         <div>
                             <span>฿</span>
-                            <span>{{price}}</span></div>
-                            <div>
-                                <span>จำนวน</span>
-                                <div class="">
-                                    <div class="net-vid-pieces-input">
-                                        <div class="next-icon-bar">
-                                            <button type="button" (click)="onclick_plus(box.value)">
-                                                    <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="">
-                                            <span class="net-vid-pieces-input-boxtext">
-                                                <input #box (keyup)="onKey(box.value)" [value]="pieces">
-                                            </span>
-                                        </div>
-                                        <div class="next-icon-bar">
-                                            <button type="button" (click)="onclick_minus(box.value)">
-                                                    <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
+                            <span>{{product.price}}</span>
+                        </div>
+                        <div>
+                            <span>จำนวน</span>
+                            <div class="">
+                                <div class="net-vid-pieces-input">
+                                    <div class="next-icon-bar">
+                                        <button type="button" (click)="onclick_plus(box.value)">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <span class="net-vid-pieces-input-boxtext">
+                                            <input #box (keyup)="onKey(box.value, product)" [value]="pieces">
+                                        </span>
+                                    </div>
+                                    <div class="next-icon-bar">
+                                        <button type="button" (click)="onclick_minus(box.value)">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
                                     </div>
                                 </div>
-
                             </div>
-                    </div>
-                    <div class="col-2 col1" id="div-checkbox">
-                        <div>
-                            <input (change)="box_check($event, check)" [value]="check" type="checkbox"/>
-                        </div>
-                        <div>
-                            <a href="#" onclick="คุณต้องการลบรายการสินค้าของคุณหรือไม่">ลบ</a>
                         </div>
                     </div>
+            <!--</div>-->
+            
+                <div class="col-2 col1" id="div-checkbox">
+                    <div>
+                        <input (change)="box_check($event, check, product)" [value]="check" type="checkbox"/>
+                    </div>
+                    <div class="test" (click)="deleteProduct(product)">
+                        <span type="button">ลบ</span>
+                    </div>
+                </div>
             </div>
-            <p></p>
-            <div class="Product-list" id="div-shopping-pro">
-                <!--form cass = "Shopping-list" id="div-shopping-pro"-->
-                    <div id="img">
-                        <img src="https://cdn.discordapp.com/attachments/748375075706634243/806443249240637470/shop1.png"
-                            alt="product" class="img-product">
-                    </div>
-                    <div  class="product-details">
-                        <div><span>รองเท้าหนาพิเศษ</span></div>
-                        <div><span>ขนาด</span><span>39</span></div>
-                    </div>
-                    <div class="col-2 col1" id="div-name">
-                        <div><span>฿</span><span>229.00</span></div>
-                        <div><span>จำนวน</span></div>
-                    </div>
-                    <div class="col-2 col1" id="div-checkbox">
-                        <input (change)="box_check($event, check)" [value]="check" type="checkbox"/>
-                        <a>{{check}}</a>
-                    </div>
-                <!--/form-->
-            </div>
+        </div>
+        
+
+
+
+
+
+
 
     </section>
     <aside>
