@@ -18,6 +18,9 @@
   position:relative;
   height: 400px;
 }
+#img-pan-flex{
+  width: 100%;
+}
 
 .container-flex-pan-img > img{
   text-align: center;
@@ -61,28 +64,16 @@
   padding: 10px;
 }
 
-.test2{
-
-}
-
 .img-pro > img{
   width: 200px;
   height: 120px;
 }
-
-
-
-
-
-
 .container-fluid{
       display: block;
       padding-top: 75px;
 }
-
 #div-product{
-      display: flex
-      
+      display: flex     
 } 
 
 .image{
@@ -108,22 +99,23 @@
   left: 60.5px;
 }
 .btn-warning{
+  color: white;
   font-size: 30px;
-  width: 397px;
+  width: 200px;
 }
 .btn-primary{
   background-color: #F2610D;
   border-color: #F2610D;
   font-size: 30px;
-  width: 397px;
+  width: 200px;
 }
 #priceModal{
   color: #F05A10;
   font-size: 60px;
 }
 .image2{
-  width: 795px;
-  height: 525px;
+  width:360px;
+  /* height: 525px; */
 }
 
 .modalImage{
@@ -139,11 +131,13 @@
   top: 10%;
   left: 265px;
   width: 1445px;
-  height: 772px;
+  height: auto;
   position: sticky;
   border: 3px solid rgba(250, 92, 0, 0.986); ;
 }
-
+.modal-body{
+  width: 600px;
+}
 .close{
   font-size: 2.5rem;
 }

@@ -15,9 +15,8 @@ export class SellProductsComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { 
     this.addProductsForm = this.fb.group({
-      image: ['', Validators.required],
+      image: [''],
       productName: ['', Validators.required],
-      size: ['', Validators.required],
       price: ['', Validators.required],
       storeName: ['', Validators.required],
       amount: ['', Validators.required],
