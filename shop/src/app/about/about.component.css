@@ -8,3 +8,7 @@
     width: 20%;
     margin: auto;
 }
+#carouselExampleIndicators1 > p{
+    padding-left: 90px;
+    font-weight: bold;
+}
