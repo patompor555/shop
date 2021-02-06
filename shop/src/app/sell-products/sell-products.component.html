@@ -1,15 +1,17 @@
-<div class="container sell">
-    <div class="col-6">
-        <div class="img-sell"></div>
-        <input type="text" formControlName="image" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.image.errors }" />
-        <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
-            <div *ngIf="f.image.errors.required">Store name is required</div>
+<!-- <form [formGroup]="addProductsForm" (ngSubmit)="onSubmit()"> -->
+<form [formGroup]="addProductsForm">
+    <div class="container sell">
+
+        <div class="col-6">
+            <div class="img-sell"></div>
+            <input type="text" formControlName="image" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.image.errors }" />
+            <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                <div *ngIf="f.image.errors.required">Store name is required</div>
+            </div>
         </div>
-    </div>
-    <div class="col-6">
-        <div>
-            <form [formGroup]="addProductsForm" (ngSubmit)="onSubmit()">
+        <div class="col-6">
+            <div>
                 <div class="form-group">
                     <div class="col-12 col-input">
                         <div class="col-4 text-input"><span>ชื่อร้านค้า : </span></div>
@@ -62,11 +64,11 @@
                 </div>
                 <div class="form-group">
                     <div class="col-12 btn-con">
-                        <button id="edit">ล้าง</button>
-                        <button id="confrim">ยืนยัน</button>
+                        <button id="edit" (click)="clear()">ล้าง</button>
+                        <button id="confrim" (click)="onSubmit()">ยืนยัน</button>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</form>

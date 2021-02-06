@@ -13,6 +13,10 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { SigninComponent } from './signin/signin.component';
 import { ShippingCartComponent } from './shipping-cart/shipping-cart.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,7 @@ import { ShippingCartComponent } from './shipping-cart/shipping-cart.component';
     ShoppingCartComponent,
     SigninComponent,
     ShippingCartComponent,
-   
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { ShippingCartComponent } from './shipping-cart/shipping-cart.component';
         path: '',
         component: HomeComponent
       }
-    ])
+    ]),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
