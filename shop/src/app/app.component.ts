@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import { AngularFireDatabase,AngularFireDatabaseModule,AngularFireList } from 'angularfire2/database';
+// import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shop';
+  // shopDb: any[];
+  // constructor(db: AngularFireDatabase) {
+  //   db.list('/ชำระสินค้า')
+  //   .subscribe(shoppingDb => {this.shopDb = shoppingDb;
+  //       console.log(this.shopDb)
+  //     });
+  // }
+  // // public shoppingDb!: Observable<any>[];
+
+  // // constructor (afDb: AngularFireDatabase) {
+
+  // //   const itemsRef: AngularFireList<any> = afDb.list('Product payment');
+  // //   itemsRef.valueChanges().subscribe(
+  // //        x =>{ this.shoppingDb =  x;}
+  // //     );
+  // }
 }
+
 // // Get the modal
 // var modal = document.getElementById("myModal");
 
