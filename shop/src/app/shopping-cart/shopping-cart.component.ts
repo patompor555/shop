@@ -27,8 +27,6 @@ export class ShoppingCartComponent implements OnInit {
   productsForm: FormGroup;
   selectedProduct!: Product;
 
-  carts: Observable<any[]>;
-
   constructor(private fb: FormBuilder,public db: AngularFireDatabase) { 
     this.productsForm = this.fb.group({
       idProduct: [],
@@ -43,8 +41,7 @@ export class ShoppingCartComponent implements OnInit {
     }
     console.log(this.piecess);
     this.update();
-    this.carts = db.list('carts').valueChanges();
-    console.log(db.list('carts').valueChanges())
+    
   }
 
   ngOnInit(): void {
@@ -169,6 +166,7 @@ deleteProduct(product:Product){
   console.log(product);
   this.product.splice((product.idProduct-1),(product.idProduct));
   console.log(this.product);
+  this.pieces=0;
 }
 
 }
