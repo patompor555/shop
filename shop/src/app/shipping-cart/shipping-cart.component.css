@@ -27,7 +27,8 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 40%;
+    width: 45%;
+    height: 65%;
   }
   
   /* The Close Button */
@@ -48,6 +49,30 @@
       display: block;
   }
   .table-task{
-      display: flex;
-      text-align: left;
+    display: flex;
+    text-align: left;
+    padding-bottom: 20px;
+    border: 1px solid #ccc!important;
+  }
+  .table-task1{
+    display: flex;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    /* border: 1px solid #ccc!important; */
+  }
+  .de{
+    /* top: 196px; */
+    left: 500px;
+    position: absolute;
+  }
+  .thank{
+    text-align: center;
+    top: 196px;
+    /* left: 300px; */
+    position: absolute;
+  }
+  .decus{
+    padding-left: 105px;
+    padding-bottom: 20px;
   }
