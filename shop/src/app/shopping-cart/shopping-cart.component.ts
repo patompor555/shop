@@ -5,6 +5,8 @@ import { Product } from '../Product';
 import { Cart } from '../Cart';
 import { from, pairs } from 'rxjs';
 
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -25,7 +27,9 @@ export class ShoppingCartComponent implements OnInit {
   productsForm: FormGroup;
   selectedProduct!: Product;
 
-  constructor(private fb: FormBuilder,) { 
+  carts: Observable<any[]>;
+
+  constructor(private fb: FormBuilder,public db: AngularFireDatabase) { 
     this.productsForm = this.fb.group({
       idProduct: [],
       image: [''],
@@ -39,6 +43,7 @@ export class ShoppingCartComponent implements OnInit {
     }
     console.log(this.piecess);
     this.update();
+    this.carts = db.list('carts').valueChanges();
   }
 
   ngOnInit(): void {
