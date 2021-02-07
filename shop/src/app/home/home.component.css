@@ -1,4 +1,22 @@
 #carouselExampleIndicators{
-    width: 20%;
+    width: 800px;
+    height: 350px;
     margin: auto;
+}
+
+.Infohomepage{
+    padding-top: 1px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+.Infohomepage > h2{
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.Infohomepage > p{
+    text-indent: 5%;
+}
+.Infohomepage > span{
+    font-weight: bold;
 }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Product } from '../Product';
 import { Cart } from '../Cart';
 import { PRODUCTS } from '../mock-Products';
+
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -10,20 +12,19 @@ import { PRODUCTS } from '../mock-Products';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  productsForm: FormGroup;
   cart = Cart;
   products = PRODUCTS;
   selectedProduct!: Product;
   amount = 1;
 
-  constructor(private fb: FormBuilder,) {
-    this.productsForm = this.fb.group({
-      image: [''],
-      productName: [''],
-      size: [''],
-      price: [''],
-      storeName: ['']
-    });
+  itemValue = '';
+  items: Observable<any[]>;
+  carts: Observable<any[]>;
+
+  constructor(public db: AngularFireDatabase) {
+
+    this.items = db.list('items').valueChanges();
+    this.carts = db.list('carts').valueChanges();
   }
 
   ngOnInit(): void {
@@ -34,19 +35,19 @@ export class ShopComponent implements OnInit {
     console.log("passssssss", this.selectedProduct);
   }
 
-  addAmount() {
-    this.amount += 1;
-  }
+  // addAmount() {
+  //   this.amount += 1;
+  // }
 
-  decreaseAmount() {
-    this.amount -= 1;
-    if (this.amount == 0) {
-      this.amount = 1;
-    }
-  }
+  // decreaseAmount() {
+  //   this.amount -= 1;
+  //   if (this.amount == 0) {
+  //     this.amount = 1;
+  //   }
+  // }
 
   onSubmit() {
-    this.cart.push({
+    this.db.list('carts').push({
       image: this.selectedProduct.image,
       productName: this.selectedProduct.productName,
       price: this.selectedProduct.price,
@@ -54,17 +55,9 @@ export class ShopComponent implements OnInit {
       amount: this.amount,
       Details: this.selectedProduct.Details,
     });
-    console.log(this.cart);
-    // this.productsForm.controls['Queue'].setValue(this.queue);
-    // this.cart.push(this.productsForm.value);
-    // console.log(this.productsForm.value)
-    // this.cart.
-    // if( this.cart.amount == 0){
-    //   this.cart.amount=1
-    // }else{
-    //   this.cart.amount+=1
-    // }
-    // console.log(this.cart)
+    console.log(this.db.list('carts'));
   }
+
+
 
 }

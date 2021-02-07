@@ -1,0 +1,14 @@
+.Comment {
+        padding-top: 1px;
+        padding-left: 120px;
+        padding-right: 300px;
+        font-family: Arial
+}
+#carouselExampleIndicators1{
+    width: 20%;
+    margin: auto;
+}
+#carouselExampleIndicators1 > p{
+    padding-left: 90px;
+    font-weight: bold;
+}

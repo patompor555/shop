@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { PRODUCTS } from '../mock-Products';
+import { Product } from '../Product';
+import { Cart } from '../Cart';
+import { from, pairs } from 'rxjs';
 
-/*export interface Task {
-  name: string;
-  completed: boolean;
-  subtasks?: Task[];
-}*/
 
 @Component({
   selector: 'app-shopping-cart',
@@ -12,8 +12,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-
-  price : number = 229.25;
+  piecess: number[] = [];
+  price : number = 0;
   pieces : number = 1;
   total_price : number = 0;
   value_check: boolean = false;
@@ -21,14 +21,37 @@ export class ShoppingCartComponent implements OnInit {
   all_total_price: number = 0.00;
   check: boolean = false;
 
-  
-  constructor() { 
-    this.total_price=this.total(this.price, this.pieces);
-    this.all_total_price=this.all_total(this.price, this.pieces, this.shipping_cost);
-    
+  product = PRODUCTS;
+  productsForm: FormGroup;
+  selectedProduct!: Product;
+
+  constructor(private fb: FormBuilder,) { 
+    this.productsForm = this.fb.group({
+      idProduct: [],
+      image: [''],
+      productName: [''],
+      size: [''],
+      price: [''],
+      storeName: ['']
+    });
+
+    this.update();
   }
 
   ngOnInit(): void {
+    
+    const members = [ 
+      {name: "Eve", age: 24}, 
+      {name: "Adam", age: 48}, 
+      {name: "Chris", age: 18}, 
+      {name: "Danny", age: 30}
+   ];
+   let x = this.product;
+   console.log(x[1].price);
+   
+   
+
+
   }
 
   /*
@@ -53,8 +76,14 @@ export class ShoppingCartComponent implements OnInit {
     return sum;
   }
   
-  onKey(value: string) {
-      this.pieces = Number(value);
+  onKey(value: string, product: Product) {
+      for(let i =0; i<this.product.length;i++){
+        this.piecess[i]=i;
+      }
+      this.onSelect(product);
+      this.piecess[(product.idProduct)-1]= Number(value);
+      console.log(this.piecess);
+      this.pieces=this.piecess[(product.idProduct)-1];
       this.update(); 
   }
 
@@ -82,16 +111,46 @@ export class ShoppingCartComponent implements OnInit {
     }
   }
 
-  box_check(e:any, c:boolean){
+  box_check(e:any, c:boolean, product: Product){
     if(e.target.checked){
       this.check = true;
+      this.onSelect(product);
+      this.plusPrice();
     }else{
-      this.check = false; 
+      this.check = false;
+      this.onSelect(product); 
+      this.minusPrice();
     }
     return this.check;
   }
+  
 
+onSelect(product: Product): void {
+  this.selectedProduct = product;
+  console.log("passssssss", this.selectedProduct);
+}
+
+plusPrice(){
+  this.price += this.selectedProduct.price
+  console.log(this.price);
+  this.update()
+}
+
+minusPrice(){
+  if(this.price>0){
+    this.price -= this.selectedProduct.price
+    console.log(this.price);
+    this.update()
+  }else{
+    this.price=0;
+  }
   
-  
+}
+
+deleteProduct(product:Product){
+  console.log(product);
+  this.product.splice((product.idProduct-1),(product.idProduct));
+  console.log(this.product);
+}
 
 }

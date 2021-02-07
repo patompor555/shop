@@ -26,6 +26,10 @@ import { ShippingCartComponent } from './shipping-cart/shipping-cart.component';
 //   measurementId: "G-Q7LRCHPBKM"
 // }
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +54,9 @@ import { ShippingCartComponent } from './shipping-cart/shipping-cart.component';
         path: '',
         component: HomeComponent
       }
-    ])
+    ]),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
