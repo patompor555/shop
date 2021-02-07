@@ -82,6 +82,8 @@ export class ShoppingCartComponent implements OnInit {
       }
       this.onSelect(product);
       this.piecess[(product.idProduct)-1]= Number(value);
+      console.log(this.piecess);
+      this.pieces=this.piecess[(product.idProduct)-1];
       this.update(); 
   }
 
