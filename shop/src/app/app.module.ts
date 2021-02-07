@@ -12,6 +12,19 @@ import { AboutComponent } from './about/about.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { SigninComponent } from './signin/signin.component';
 import { ShippingCartComponent } from './shipping-cart/shipping-cart.component';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+// export const firebaseConfig = {
+//   apiKey: "AIzaSyC0G7V0REDrZvRM9HgxbEXi-UsW5rvF03o",
+//   authDomain: "test-firebase-realtime-web.firebaseapp.com",
+//   databaseURL: "https://test-firebase-realtime-web-default-rtdb.firebaseio.com",
+//   projectId: "test-firebase-realtime-web",
+//   storageBucket: "test-firebase-realtime-web.appspot.com",
+//   messagingSenderId: "442398714466",
+//   appId: "1:442398714466:web:913ae925d845d6237f3f3b",
+//   measurementId: "G-Q7LRCHPBKM"
+// }
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -32,6 +45,8 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // AngularFireModule.initializeApp(firebaseConfig),
+    // AngularFireDatabaseModule,
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
