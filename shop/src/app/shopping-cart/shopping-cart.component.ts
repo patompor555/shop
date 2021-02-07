@@ -44,6 +44,7 @@ export class ShoppingCartComponent implements OnInit {
     console.log(this.piecess);
     this.update();
     this.carts = db.list('carts').valueChanges();
+    console.log(db.list('carts').valueChanges())
   }
 
   ngOnInit(): void {
