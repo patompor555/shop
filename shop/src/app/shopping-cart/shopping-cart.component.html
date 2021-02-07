@@ -29,17 +29,17 @@
                             <div class="">
                                 <div class="net-vid-pieces-input">
                                     <div class="next-icon-bar">
-                                        <button type="button" (click)="onclick_plus(box.value)">
+                                        <button type="button" (click)="onclick_plus(box.value, product)">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                     <div class="">
                                         <span class="net-vid-pieces-input-boxtext">
-                                            <input #box (keyup)="onKey(box.value, product)" [value]="pieces">
+                                            <input #box (keyup)="onKey(box.value, product)" [value]="piecess[(product.idProduct)-1]">
                                         </span>
                                     </div>
                                     <div class="next-icon-bar">
-                                        <button type="button" (click)="onclick_minus(box.value)">
+                                        <button type="button" (click)="onclick_minus(box.value, product)">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </div>

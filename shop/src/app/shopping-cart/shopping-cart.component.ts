@@ -34,7 +34,10 @@ export class ShoppingCartComponent implements OnInit {
       price: [''],
       storeName: ['']
     });
-
+    for(let i =0; i<this.product.length;i++){
+      this.piecess[i]=1;
+    }
+    console.log(this.piecess);
     this.update();
   }
 
@@ -66,48 +69,55 @@ export class ShoppingCartComponent implements OnInit {
 
   total(price:number, pieces:number){
     sum:Number;
-    const sum =(price*pieces);
+    const sum =(price);
     return sum;
   }
 
   all_total(price:number, pieces:number, shipping_cost:number){
     sum:Number;
-    const sum =((price*pieces)+shipping_cost);
+    const sum =(price+shipping_cost);
     return sum;
   }
   
   onKey(value: string, product: Product) {
-      for(let i =0; i<this.product.length;i++){
-        this.piecess[i]=i;
-      }
       this.onSelect(product);
       this.piecess[(product.idProduct)-1]= Number(value);
-      console.log(this.piecess);
+      //console.log(this.piecess);
       this.pieces=this.piecess[(product.idProduct)-1];
+      //this.updateOnClick(product);
       this.update(); 
   }
 
   update(){
-    this.pieces_check(this.pieces);
     this.total_price=this.total(this.price, this.pieces);
     this.all_total_price=this.all_total(this.price, this.pieces, this.shipping_cost);
+    console.log(this.piecess);
   }
 
-  onclick_plus(value: string){
-    this.pieces=(Number(value)+1);
-    this.update(); 
+  updateOnClick(product: Product){
+    this.pieces_check(this.piecess[product.idProduct-1], product);
+    this.update();
   }
 
-  onclick_minus(value: string){
-    this.pieces=(Number(value)-1);
-    this.update(); 
+  onclick_plus(value: string, product: Product){
+    this.piecess[(product.idProduct)-1]=(Number(value)+1);
+    this.price = (product.price*this.piecess[product.idProduct-1]);
+    this.updateOnClick(product);
+    //this.update();
+  }
+
+  onclick_minus(value: string,product: Product){
+    this.piecess[(product.idProduct)-1]=(Number(value)-1);
+    this.price = (product.price*this.piecess[product.idProduct-1]);
+    this.updateOnClick(product);
+    //this.update(); 
   }
   
-  pieces_check(check:number){
+  pieces_check(check:number, product: Product){
     if(check <= 0){
-      this.pieces= 1;
+      this.piecess[product.idProduct-1]= 1;
     }else{
-      this.pieces= check;
+      this.piecess[product.idProduct-1]= check;
     }
   }
 
@@ -115,11 +125,11 @@ export class ShoppingCartComponent implements OnInit {
     if(e.target.checked){
       this.check = true;
       this.onSelect(product);
-      this.plusPrice();
+      this.plusPrice(product);
     }else{
       this.check = false;
       this.onSelect(product); 
-      this.minusPrice();
+      this.minusPrice(product);
     }
     return this.check;
   }
@@ -130,17 +140,19 @@ onSelect(product: Product): void {
   console.log("passssssss", this.selectedProduct);
 }
 
-plusPrice(){
-  this.price += this.selectedProduct.price
+plusPrice(product:Product){
+  this.price += (product.price*this.piecess[product.idProduct-1]);
   console.log(this.price);
-  this.update()
+  this.updateOnClick(product);
+  //this.update();
 }
 
-minusPrice(){
+minusPrice(product:Product){
   if(this.price>0){
-    this.price -= this.selectedProduct.price
+    this.price -= (product.price*this.piecess[product.idProduct-1]);
     console.log(this.price);
-    this.update()
+    this.updateOnClick(product);
+    //this.update();
   }else{
     this.price=0;
   }
